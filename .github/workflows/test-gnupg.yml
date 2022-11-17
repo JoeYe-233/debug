@@ -37,7 +37,7 @@ jobs:
       - name: Install Gnu Privacy Guard
         run: |
           sudo apt install -y gnupg
-          chmod go-rwx /home//Programming/GnuPGP/pgphome
+          mkdir -p $HOME/.gpg/keys
       - name: Run app
         env:
           publicKey: ${{ secrets.PUBLIC_KEY }}

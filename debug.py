@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 print("参数信息：", args)
 
-gpg=gnupg.GPG()
+gpg=gnupg.GPG(gnupghome='$HOME/.gpg/keys')
 data="Hello world"
 import_result = gpg.import_keys(args.publicKey)
 fingerprints=import_result.fingerprints

@@ -38,6 +38,7 @@ jobs:
         run: |
           sudo apt install -y gnupg
           mkdir -p /home/runner/.gpg/keys
+          chmod go-rwx /home/runner/.gpg/keys
       - name: Run app
         env:
           publicKey: ${{ secrets.PUBLIC_KEY }}

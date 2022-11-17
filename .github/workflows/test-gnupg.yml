@@ -38,7 +38,7 @@ jobs:
         run: |
           sudo apt install -y gnupg
           mkdir -p /home/runner/.gpg/keys
-          chmod u-wx,go-rwx /home//Programming/GnuPGP/pgphome
+          chmod u-wx,go-rwx /home/runner/.gpg/keys
       - name: Run app
         env:
           publicKey: ${{ secrets.PUBLIC_KEY }}

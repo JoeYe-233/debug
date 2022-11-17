@@ -38,8 +38,8 @@ jobs:
       - name: Install Gnu Privacy Guard
         run: |
           sudo apt install -y gnupg
-          mkdir -p /home/runner/.gpg/keys
-          chmod u-wx,go-rwx /home/runner/.gpg/keys
+          sudo mkdir -p /home/runner/.gpg/keys
+          sudo chmod u-wx,go-rwx /home/runner/.gpg/keys
       - name: Run app
         env:
           publicKey: ${{ secrets.PUBLIC_KEY }}

@@ -17,7 +17,7 @@ gpg.trust_keys(fingerprints, 'TRUST_ULTIMATE')
 print("添加了",import_result.count,"个密钥对")
 print(fingerprints)
 encrypted_data = gpg.encrypt(data,fingerprints,sign=True)
-print(encrypted_data.status_detail)
+# print(encrypted_data.status_detail)available after python-gnupg 0.5.1
 print(encrypted_data.status)
 print(encrypted_data.ok)
 print(str(encrypted_data))

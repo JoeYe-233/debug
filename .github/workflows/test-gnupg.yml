@@ -41,4 +41,4 @@ jobs:
         env:
           publicKey: ${{ secrets.PUBLIC_KEY }}
         run: |
-          python3 debug.py --publicKey=$publicKey
+          python3 debug.py --publicKey="$publicKey"

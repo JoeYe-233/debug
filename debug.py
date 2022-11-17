@@ -16,5 +16,5 @@ fingerprints=import_result.fingerprints
 print("添加了",import_result.count,"个密钥对")
 print(fingerprints)
 encrypted_data = gpg.encrypt(data,fingerprints)
-print(encrypted_data)
+print(str(encrypted_data))
 

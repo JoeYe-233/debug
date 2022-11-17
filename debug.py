@@ -11,7 +11,7 @@ print("参数信息：", args)
 
 gpg=gnupg.GPG()
 data="Hello world"
-import_result = gpg.import_keys_file(args.publicKey)
+import_result = gpg.import_keys(args.publicKey)
 fingerprints=import_result.fingerprints
 encrypted_data = gpg.encrypt(data,fingerprints)
 print(encrypted_data)

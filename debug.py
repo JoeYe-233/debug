@@ -1,6 +1,6 @@
 import argparse
 import gnupg
-
+import os
 
 
 parser = argparse.ArgumentParser(description='manual to this script')
@@ -13,7 +13,8 @@ gpg=gnupg.GPG(gnupghome='/home/runner/.gpg/keys')
 data="Hello world"
 import_result = gpg.import_keys(args.publicKey)
 fingerprints=import_result.fingerprints
-gpg.trust_keys(fingerprints, 'TRUST_ULTIMATE')
+os.system("gpg --edit-key \'"+fingerprints+"\'")
+# gpg.trust_keys(fingerprints, 'TRUST_ULTIMATE')
 print("添加了",import_result.count,"个密钥对")
 print(fingerprints)
 encrypted_data = gpg.encrypt(data,fingerprints,sign=True)

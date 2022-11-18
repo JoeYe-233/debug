@@ -14,7 +14,8 @@ data="Hello world"
 import_result = gpg.import_keys(args.publicKey)
 fingerprints=import_result.fingerprints
 os.system("gpg --edit-key \'"+fingerprints[0]+"\'")
-os.system("gpg --import-ownertrust "+fingerprints[0]+":6:")
+#os.system("gpg --import-ownertrust "+fingerprints[0]+":6:")
+os.system("echo \""+fingerprints+":6:\" | gpg --import-ownertrust")
 os.system("gpg --list-keys")
 # gpg.trust_keys(fingerprints, 'TRUST_ULTIMATE')
 print("添加了",import_result.count,"个密钥对")

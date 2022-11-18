@@ -9,15 +9,19 @@ args = parser.parse_args()
 
 print("参数信息：", args)
 
-gpg=gnupg.GPG(gnupghome='/home/runner/.gpg/keys')
+gpg=gnupg.GPG()
 data="Hello world"
 import_result = gpg.import_keys(args.publicKey)
 fingerprints=import_result.fingerprints
-print(fingerprints[1])
-os.system("gpg --edit-key \'"+fingerprints[1]+"\'")
+# os.system("gpg --edit-key \'"+fingerprints[1]+"\'")
 # gpg.trust_keys(fingerprints, 'TRUST_ULTIMATE')
 print("添加了",import_result.count,"个密钥对")
-print(fingerprints)
+
+
+print(fingerprints[0])
+
+
+
 encrypted_data = gpg.encrypt(data,fingerprints,sign=True)
 # print(encrypted_data.status_detail)available after python-gnupg 0.5.1
 print(encrypted_data.status)

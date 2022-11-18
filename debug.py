@@ -13,7 +13,7 @@ gpg=gnupg.GPG()
 data="Hello world"
 import_result = gpg.import_keys(args.publicKey)
 fingerprints=import_result.fingerprints
-# os.system("gpg --edit-key \'"+fingerprints[1]+"\'")
+os.system("gpg --edit-key \'"+fingerprints[0]+"\'")
 # gpg.trust_keys(fingerprints, 'TRUST_ULTIMATE')
 print("添加了",import_result.count,"个密钥对")
 

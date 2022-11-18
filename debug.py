@@ -25,8 +25,8 @@ print(fingerprints[0])
 
 
 
-encrypted_data = gpg.encrypt(data,fingerprints,sign=True)
-# print(encrypted_data.status_detail)available after python-gnupg 0.5.1
-print(encrypted_data.status)
-print(encrypted_data.ok)
-print(str(encrypted_data))
+# encrypted_data = gpg.encrypt(data,fingerprints,sign=True)
+# # print(encrypted_data.status_detail)available after python-gnupg 0.5.1
+# print(encrypted_data.status)
+# print(encrypted_data.ok)
+# print(str(encrypted_data))

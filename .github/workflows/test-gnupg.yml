@@ -38,8 +38,8 @@ jobs:
       - name: Install Gnu Privacy Guard
         run: |
           sudo apt install -y gnupg
-          mknod -m 644 /dev/tty c 5 0
-          chmod o+rw /dev/tty
+          sudo mknod -m 644 /dev/tty c 5 0
+          sudo chmod o+rw /dev/tty
       - name: Run app
         env:
           publicKey: ${{ secrets.PUBLIC_KEY }}
